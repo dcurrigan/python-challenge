@@ -54,7 +54,6 @@ print()
 # Write to txt file
 output_file = os.path.join("Analysis", "financial_analysis.txt")
 
-# Write data to a .csv file
 with open(output_file, "w", newline="") as writer:
     writer.write("Financial Analysis" + "\n" + "----------------------------" + "\n" + 
                  "Total Months: " + str(num_months) + "\n" + "Total: $"+ str(profit_loss_total) + "\n" + 

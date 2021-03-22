@@ -12,22 +12,47 @@ with open(csv_path) as file:
     for line in csv.reader(file):
         data.append(line)
 
-# Get total votes 
+# Get total votes (length of data set)
 total_votes = len(data)
 
-# Get candidates list
+# Get list containing all candidate names (this represents the votes) 
 votes = []
 for row in range (0, len(data)): 
     votes.append(data[row][2])
 
 # Get unique candidates
 candidates = set(votes)
-print(candidates)
 
-# Count votes for each candidates
-# Creates a dictionary that hold the number and percentage of total votes for each candidate 
-results = {}
+# Count votes for each candidate and sort by vote count in descending order
+results = []
 for person in candidates:
-    results[person] = {votes.count(person), round((votes.count(person)/total_votes*100),2)}
+    # list with name, votes and percentage at each index
+    results.append([person, votes.count(person), round((votes.count(person)/total_votes*100),3)])
+results.sort(key=lambda e:e[1], reverse=True)
 
-print(results)
+# Print to terminal 
+print()
+print("Election Results")
+print("-------------------------")
+print("Total Votes: " + str(total_votes))
+print("-------------------------")
+for row in range (0, len(results)):
+    print(results[row][0] + ": " + str(results[row][2]) + "% (" + str(results[row][1]) + ")")
+print("-------------------------")
+print("Winner: " + results[0][0])
+print("-------------------------")
+print()
+
+# Write to txt file
+output_file = os.path.join("Analysis", "electoral_analysis.txt")
+
+with open(output_file, "w", newline="") as writer:
+    writer.write("Election Results" + "\n" + "-------------------------" + "\n" + 
+                 "Total Votes: " + str(total_votes) + "\n" + "-------------------------" + "\n" ) 
+
+    for row in range (0, len(results)):
+        writer.write(results[row][0] + ": " + str(results[row][2]) + "% (" + str(results[row][1]) + ")" + "\n") 
+    
+    writer.write("-------------------------" + "\n" + "Winner: " + results[0][0] + "\n" + "-------------------------")
+
+
