@@ -3,11 +3,11 @@ import csv
 
 csv_path = os.path.join('Resources', 'budget_data.csv')
 
-# Convert data to list 
+# Convert data to list and store headers separately 
 with open(csv_path) as file:
     reader = csv.reader(file)
     data = []
-    next(reader)
+    headers = next(reader)
     
     for line in csv.reader(file):
         data.append(line)
@@ -19,7 +19,6 @@ num_months = len(data)
 profit_loss_total = 0
 for row in range(0, len(data)):
     profit_loss_total += int(data[row][1])
-
 
 # Get change in profit/loss 
 change = []
