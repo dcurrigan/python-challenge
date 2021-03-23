@@ -26,8 +26,9 @@ candidates = set(votes)
 # Count votes for each candidate and sort by vote count in descending order
 results = []
 for person in candidates:
-    # list with name, votes and percentage at each index
+    # List with name, votes and percentage at each index
     results.append([person, votes.count(person), round((votes.count(person)/total_votes*100),3)])
+        # Lambda function returns the second element of the results list (votes), which is used as key to sort           
 results.sort(key=lambda e:e[1], reverse=True)
 
 # Print to terminal 
