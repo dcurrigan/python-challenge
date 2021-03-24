@@ -35,7 +35,7 @@ results.sort(key=lambda e:e[1], reverse=True)
 print()
 print("Election Results")
 print("-------------------------")
-print("Total Votes: " + str(total_votes))
+print(f"Total Votes: " + str(total_votes))
 print("-------------------------")
 for row in range (0, len(results)):
     print(results[row][0] + ": " + str(results[row][2]) + "% (" + str(results[row][1]) + ")")
