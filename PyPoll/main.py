@@ -1,7 +1,8 @@
 import os
 import csv
 
-csv_path = os.path.join('Resources', 'election_data.csv')
+dirname = os.path.dirname(__file__)
+csv_path = os.path.join(dirname, 'Resources', 'election_data.csv')
 
 # Convert data to list and store headers
 with open(csv_path) as file:
@@ -45,7 +46,7 @@ print("-------------------------")
 print()
 
 # Write to txt file
-output_file = os.path.join("Analysis", "electoral_analysis.txt")
+output_file = os.path.join(dirname, "Analysis", "electoral_analysis.txt")
 
 with open(output_file, "w", newline="") as writer:
     writer.write("Election Results" + "\n" + "-------------------------" + "\n" + 

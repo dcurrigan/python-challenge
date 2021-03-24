@@ -1,7 +1,8 @@
 import os
 import csv
 
-csv_path = os.path.join('Resources', 'budget_data.csv')
+dirname = os.path.dirname(__file__)
+csv_path = os.path.join(dirname, 'Resources', 'budget_data.csv')
 
 # Convert data to list and store headers separately 
 with open(csv_path) as file:
@@ -52,7 +53,7 @@ print()
 
 
 # Write to txt file
-output_file = os.path.join("Analysis", "financial_analysis.txt")
+output_file = os.path.join(dirname, "Analysis", "financial_analysis.txt")
 
 with open(output_file, "w", newline="") as writer:
     writer.write("Financial Analysis" + "\n" + "----------------------------" + "\n" + 
