@@ -18,7 +18,7 @@ total_votes = len(data)
 
 # Get list containing all candidate names (this represents the votes) 
 votes = []
-for row in range (0, len(data)): 
+for row in range (len(data)): 
     votes.append(data[row][2])
 
 # Get unique candidates
