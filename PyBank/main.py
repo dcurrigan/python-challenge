@@ -59,7 +59,7 @@ with open(output_file, "w", newline="") as writer:
     nl = "\n"
     writer.write(f"Financial Analysis{nl}----------------------------{nl}") 
     writer.write(f"Total Months: {num_months}{nl}Total: ${profit_loss_total}{nl}") 
-    writer.write(f"Average Change: ${average_change}{nl} 
+    writer.write(f"Average Change: ${average_change}{nl}") 
     writer.write(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]}){nl}") 
     writer.write(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]}){nl}") 
 

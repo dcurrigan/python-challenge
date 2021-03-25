@@ -49,9 +49,9 @@ print()
 output_file = os.path.join(dirname, "Analysis", "electoral_analysis.txt")
 
 with open(output_file, "w", newline="") as writer:
-    nl = "/n"
-    writer.write(f"Election Results{nl}-------------------------{nl}"
-    writer.write(f"Total Votes: {total_votes}{nl}-------------------------")
+    nl = "\n"
+    writer.write(f"Election Results{nl}-------------------------{nl}")
+    writer.write(f"Total Votes: {total_votes}{nl}-------------------------{nl}")
     for row in range (len(results)):
         writer.write(f"{results[row][0]}: {results[row][2]}% ({results[row][1]}){nl}") 
     writer.write(f"-------------------------{nl}Winner: {results[0][0]}{nl}-------------------------")
