@@ -44,11 +44,11 @@ average_change = round((sum(change)/len(change)),2)
 print()
 print("Financial Analysis")
 print("----------------------------")
-print("Total Months: " + str(num_months))
-print("Total: $"+ str(profit_loss_total))
-print("Average Change: $"+ str(average_change))
-print("Greatest Increase in Profits: " + greatest_increase[0] + " ($" + str(greatest_increase[1]) + ")")
-print("Greatest Decrease in Profits: " + greatest_decrease[0] + " ($" + str(greatest_decrease[1]) + ")")
+print(f"Total Months: {num_months}")
+print(f"Total: ${profit_loss_total}")
+print(f"Average Change: ${average_change}")
+print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
+print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")
 print() 
 
 
@@ -56,10 +56,11 @@ print()
 output_file = os.path.join(dirname, "Analysis", "financial_analysis.txt")
 
 with open(output_file, "w", newline="") as writer:
-    writer.write("Financial Analysis" + "\n" + "----------------------------" + "\n" + 
-                 "Total Months: " + str(num_months) + "\n" + "Total: $"+ str(profit_loss_total) + "\n" + 
-                 "Average Change: $"+ str(average_change) + "\n" + 
-                 "Greatest Increase in Profits: " + greatest_increase[0] + " ($" + str(greatest_increase[1]) + ")" + "\n" + 
-                 "Greatest Decrease in Profits: " + greatest_decrease[0] + " ($" + str(greatest_decrease[1]) + ")") 
+    nl = "\n"
+    writer.write(f"Financial Analysis{nl}----------------------------{nl}") 
+    writer.write(f"Total Months: {num_months}{nl}Total: ${profit_loss_total}{nl}") 
+    writer.write(f"Average Change: ${average_change}{nl} 
+    writer.write(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]}){nl}") 
+    writer.write(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]}){nl}") 
 
 
