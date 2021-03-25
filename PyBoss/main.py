@@ -43,7 +43,7 @@ for row in range(len(data)):
     split_ssn = data[row][4].split("-")
     data[row][4] = "***" + "-" + "**" + "-" + split_ssn[2]
 
-# Change state formatting to 2-letter abbrevation using dictionary
+# Change state formatting to 2-letter abbrevations using dictionary
 for row in range(len(data)):
     data[row][5] = us_state_abbrev[data[row][5]]
 
