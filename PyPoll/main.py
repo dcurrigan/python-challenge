@@ -29,19 +29,19 @@ results = []
 for person in candidates:
     # List with name, votes and percentage at each index
     results.append([person, votes.count(person), round((votes.count(person)/total_votes*100),3)])
-        # Lambda function returns the second element of the results list (votes), which is used as key to sort           
+        # Lambda function returns the second element of the results list (votes), which is used as key to sort, in descenting order          
 results.sort(key=lambda e:e[1], reverse=True)
 
 # Print to terminal 
 print()
 print("Election Results")
 print("-------------------------")
-print(f"Total Votes: " + str(total_votes))
+print(f"Total Votes: {total_votes}")
 print("-------------------------")
-for row in range (0, len(results)):
-    print(results[row][0] + ": " + str(results[row][2]) + "% (" + str(results[row][1]) + ")")
+for row in range (len(results)):
+    print(f"{results[row][0]}: {results[row][2]}% ({results[row][1]})")
 print("-------------------------")
-print("Winner: " + results[0][0])
+print(f"Winner: {results[0][0]}")
 print("-------------------------")
 print()
 
@@ -49,12 +49,11 @@ print()
 output_file = os.path.join(dirname, "Analysis", "electoral_analysis.txt")
 
 with open(output_file, "w", newline="") as writer:
-    writer.write("Election Results" + "\n" + "-------------------------" + "\n" + 
-                 "Total Votes: " + str(total_votes) + "\n" + "-------------------------" + "\n" ) 
-
-    for row in range (0, len(results)):
-        writer.write(results[row][0] + ": " + str(results[row][2]) + "% (" + str(results[row][1]) + ")" + "\n") 
-    
-    writer.write("-------------------------" + "\n" + "Winner: " + results[0][0] + "\n" + "-------------------------")
+    nl = "/n"
+    writer.write(f"Election Results{nl}-------------------------{nl}"
+    writer.write(f"Total Votes: {total_votes}{nl}-------------------------")
+    for row in range (len(results)):
+        writer.write(f"{results[row][0]}: {results[row][2]}% ({results[row][1]}){nl}") 
+    writer.write(f"-------------------------{nl}Winner: {results[0][0]}{nl}-------------------------")
 
 
