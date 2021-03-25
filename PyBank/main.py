@@ -18,10 +18,10 @@ num_months = len(data)
 
 # Get combined total for profit/loss
 profit_loss_total = 0
-for row in range(0, len(data)):
+for row in range(len(data)):
     profit_loss_total += int(data[row][1])
 
-# Get change in profit/loss 
+# Get change in profit/loss between months (current month total - previous month total)
 change = []
 greatest_increase = [0,0]
 greatest_decrease = [0,0]
@@ -38,6 +38,7 @@ for row in range (1, len(data)):
         greatest_decrease[1] = current_change
         greatest_decrease[0] = data[row][0] 
 
+# Get average change         
 average_change = round((sum(change)/len(change)),2)
 
 # print to terminal 
@@ -50,7 +51,6 @@ print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
 print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")
 print() 
-
 
 # Write to txt file
 output_file = os.path.join(dirname, "Analysis", "financial_analysis.txt")
