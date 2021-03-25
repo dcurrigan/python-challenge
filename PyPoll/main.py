@@ -29,7 +29,7 @@ results = []
 for person in candidates:
     # List with name, votes and percentage at each index
     results.append([person, votes.count(person), round((votes.count(person)/total_votes*100),3)])
-        # Lambda function returns the second element of the results list (votes), which is used as key to sort, in descenting order          
+        # Lambda function returns the second element of the results list (votes), which is used as key to sort, in descending order          
 results.sort(key=lambda e:e[1], reverse=True)
 
 # Print to terminal 
