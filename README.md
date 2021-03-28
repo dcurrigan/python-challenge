@@ -17,16 +17,6 @@ PyBank and PyBank directories contain Main.py files which contain the code to ru
 Resources directories contain the data sources
 Analysis directories contain the output of the code
 
-## Code Examples
-Show examples of usage:
-Financial Analysis
-----------------------------
-Total Months: 86
-Total: $38382578
-Average Change: $-2315.12
-Greatest Increase in Profits: Feb-2012 ($1926159)      
-Greatest Decrease in Profits: Sep-2013 ($-2196167)    
-
 ## Features
 PyBank analyses the following:
 * Total number of months included in the dataset
@@ -46,4 +36,4 @@ Pypol analyses the following:
 Project is: completed
 
 ## Contact
-Created by Dale Curriga. dcurrigan@gmail.com
+Created by Dale Currigan. dcurrigan@gmail.com
