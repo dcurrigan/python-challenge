@@ -4,7 +4,7 @@ import csv
 dirname = os.path.dirname(__file__)
 csv_path = os.path.join(dirname, 'Resources', 'election_data.csv')
 
-# Convert data to list and store headers
+# Add data and headers to lists
 with open(csv_path) as file:
     reader = csv.reader(file)
     data = []

@@ -4,13 +4,13 @@ import csv
 dirname = os.path.dirname(__file__)
 csv_path = os.path.join(dirname, 'Resources', 'budget_data.csv')
 
-# Convert data to list and store headers separately 
+# Add data and headers to lists 
 with open(csv_path) as file:
     reader = csv.reader(file)
     data = []
     headers = next(reader)
     
-    for line in csv.reader(file):
+    for line in reader:
         data.append(line)
 
 # Get number of months 
