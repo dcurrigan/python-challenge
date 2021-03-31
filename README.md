@@ -13,7 +13,7 @@
 This repository contains files for the week 3 homework challenges PyBank and PyPoll. Additional directories for PyBoss and PyParagrpah are present that were completed for extra practice 
 
 ## Setup
-PyBank and PyBank directories contain Main.py files which contain the code to run
+PyBank and PyBank directories contain Main.py files which contain the code to run from your prefered IDE or Terminal<\n>
 Resources directories contain the data sources
 Analysis directories contain the output of the code
 
